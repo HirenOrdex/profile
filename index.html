@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Hiren Lalani — Backend Developer</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --accent: #1a6b5a;
+      --accent-light: #2d9e87;
+      --gold: #c9a84c;
+    }
+    body { font-family: 'DM Sans', sans-serif; background: #f5f3ef; color: #1c1c1c; }
+    h1, h2, h3, .serif { font-family: 'Playfair Display', serif; }
+
+    .hero-bg {
+      background: linear-gradient(135deg, #0f2d26 0%, #1a6b5a 60%, #2d9e87 100%);
+    }
+    .card {
+      background: #fff;
+      border-radius: 1.25rem;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.07);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 40px rgba(0,0,0,0.13);
+    }
+    .badge {
+      background: #e8f5f2;
+      color: #1a6b5a;
+      border: 1px solid #b2ddd5;
+      border-radius: 999px;
+      padding: 4px 14px;
+      font-size: 0.78rem;
+      font-weight: 500;
+      display: inline-block;
+    }
+    .achievement-bar {
+      height: 6px;
+      border-radius: 3px;
+      background: linear-gradient(to right, #1a6b5a, #2d9e87);
+    }
+    .section-label {
+      font-size: 0.7rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: #1a6b5a;
+      font-weight: 600;
+    }
+    .divider {
+      border: none;
+      border-top: 2px solid #e8ede9;
+      margin: 0;
+    }
+    .icon-dot {
+      width: 10px; height: 10px;
+      background: #c9a84c;
+      border-radius: 50%;
+      display: inline-block;
+      margin-right: 8px;
+      flex-shrink: 0;
+      margin-top: 6px;
+    }
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .fade-up { animation: fadeUp 0.6s ease both; }
+    .delay-1 { animation-delay: 0.1s; }
+    .delay-2 { animation-delay: 0.2s; }
+    .delay-3 { animation-delay: 0.35s; }
+    .delay-4 { animation-delay: 0.5s; }
+
+    .timeline-dot {
+      width: 14px; height: 14px;
+      border-radius: 50%;
+      background: #1a6b5a;
+      border: 3px solid #fff;
+      box-shadow: 0 0 0 2px #1a6b5a;
+      flex-shrink: 0;
+    }
+    .timeline-line {
+      width: 2px;
+      background: #d1e8e2;
+      flex-grow: 1;
+      margin: 4px auto;
+    }
+  </style>
+</head>
+<body class="min-h-screen">
+
+  <!-- HERO -->
+  <section class="hero-bg text-white px-6 py-16 md:py-20">
+    <div class="max-w-4xl mx-auto">
+      <div class="flex flex-col md:flex-row items-start md:items-center gap-8">
+        
+        <!-- Avatar initials -->
+        <div class="fade-up flex-shrink-0">
+          <div class="w-24 h-24 rounded-2xl flex items-center justify-center text-3xl font-bold" 
+               style="background:rgba(255,255,255,0.15); border: 2px solid rgba(255,255,255,0.3); font-family:'Playfair Display',serif; letter-spacing:1px;">
+            HL
+          </div>
+        </div>
+
+        <div class="fade-up delay-1">
+          <p class="section-label mb-2" style="color:#a8e6d8;">Backend Developer</p>
+          <h1 class="text-4xl md:text-5xl font-black leading-tight" style="font-family:'Playfair Display',serif;">Hiren Lalani</h1>
+          <p class="mt-2 text-lg" style="color:#c0ede4; font-weight:300;">Node.js · Python/Django · MongoDB · Redis · PostgreSQL</p>
+          <div class="mt-4 flex flex-wrap gap-3 text-sm" style="color:#a8e6d8;">
+            <span>📍 Surat, Gujarat, India</span>
+            <span>🎓 B.Tech CSE — GEC Patan, 2024</span>
+            <span>🏢 Ordex Technology Solutions</span>
+          </div>
+        </div>
+
+        <!-- Contact CTA -->
+        <div class="fade-up delay-2 md:ml-auto flex flex-col gap-2 text-sm">
+          <a href="mailto:hiren14lalani@gmail.com" 
+             class="flex items-center gap-2 px-4 py-2 rounded-xl font-medium"
+             style="background:rgba(255,255,255,0.15); border:1px solid rgba(255,255,255,0.25); color:#fff;">
+            ✉️ hiren14lalani@gmail.com
+          </a>
+          <a href="tel:+916354753667"
+             class="flex items-center gap-2 px-4 py-2 rounded-xl font-medium"
+             style="background:rgba(255,255,255,0.15); border:1px solid rgba(255,255,255,0.25); color:#fff;">
+            📞 +91 63547 53667
+          </a>
+          <a href="https://linkedin.com/in/hiren-lalani-8a6ba41b9" target="_blank"
+             class="flex items-center gap-2 px-4 py-2 rounded-xl font-medium"
+             style="background:rgba(255,255,255,0.15); border:1px solid rgba(255,255,255,0.25); color:#fff;">
+            🔗 LinkedIn Profile
+          </a>
+          <a href="https://github.com/hiren14" target="_blank"
+             class="flex items-center gap-2 px-4 py-2 rounded-xl font-medium"
+             style="background:rgba(255,255,255,0.15); border:1px solid rgba(255,255,255,0.25); color:#fff;">
+            💻 GitHub: hiren14
+          </a>
+        </div>
+      </div>
+
+      <!-- Key stats -->
+      <div class="fade-up delay-3 mt-10 grid grid-cols-2 md:grid-cols-4 gap-4">
+        <div class="text-center p-4 rounded-xl" style="background:rgba(255,255,255,0.1);">
+          <div class="text-3xl font-black" style="font-family:'Playfair Display',serif; color:#c9e8e0;">1+</div>
+          <div class="text-xs mt-1" style="color:#9dd6cc;">Year Experience</div>
+        </div>
+        <div class="text-center p-4 rounded-xl" style="background:rgba(255,255,255,0.1);">
+          <div class="text-3xl font-black" style="font-family:'Playfair Display',serif; color:#c9e8e0;">500+</div>
+          <div class="text-xs mt-1" style="color:#9dd6cc;">Concurrent Users</div>
+        </div>
+        <div class="text-center p-4 rounded-xl" style="background:rgba(255,255,255,0.1);">
+          <div class="text-3xl font-black" style="font-family:'Playfair Display',serif; color:#c9e8e0;">60%</div>
+          <div class="text-xs mt-1" style="color:#9dd6cc;">Manual Work Reduced</div>
+        </div>
+        <div class="text-center p-4 rounded-xl" style="background:rgba(255,255,255,0.1);">
+          <div class="text-3xl font-black" style="font-family:'Playfair Display',serif; color:#c9e8e0;">35%</div>
+          <div class="text-xs mt-1" style="color:#9dd6cc;">Faster API Response</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MAIN CONTENT -->
+  <main class="max-w-4xl mx-auto px-4 py-12 space-y-10">
+
+    <!-- CURRENT ROLE -->
+    <div class="card fade-up p-6 md:p-8 border-l-4" style="border-left-color:#1a6b5a;">
+      <p class="section-label mb-1">Current Position</p>
+      <h2 class="text-2xl font-bold" style="font-family:'Playfair Display',serif;">Software Developer</h2>
+      <p class="text-lg mt-1" style="color:#1a6b5a; font-weight:500;">Ordex Technology Solutions, Surat</p>
+      <p class="text-sm mt-1" style="color:#888;">January 2024 – Present</p>
+      <p class="mt-3 text-sm leading-relaxed" style="color:#444;">
+        Building scalable backend systems using Node.js and Python (Django/DRF), working with MongoDB, PostgreSQL, Redis, and Docker. Focused on event-driven architectures, third-party integrations, and production-grade API development.
+      </p>
+    </div>
+
+    <!-- PROJECTS -->
+    <div>
+      <p class="section-label mb-4">Featured Projects</p>
+      <div class="grid md:grid-cols-2 gap-5">
+
+        <!-- Project 1 -->
+        <div class="card fade-up delay-1 p-6">
+          <div class="flex items-start justify-between mb-3">
+            <div class="text-2xl">⚡</div>
+            <span class="badge">Node.js</span>
+          </div>
+          <h3 class="text-lg font-bold mb-1" style="font-family:'Playfair Display',serif;">Employee Payout Tracker</h3>
+          <p class="text-xs mb-3" style="color:#888;">Event-Driven Architecture</p>
+          <div class="flex flex-wrap gap-2 mb-4">
+            <span class="badge">MongoDB</span>
+            <span class="badge">Redis</span>
+            <span class="badge">Docker</span>
+          </div>
+          <hr class="divider mb-4"/>
+          <ul class="space-y-2 text-sm" style="color:#555;">
+            <li class="flex"><span class="icon-dot mt-1 flex-shrink-0"></span><span>Real-time work session & break tracking with event-driven patterns</span></li>
+            <li class="flex"><span class="icon-dot mt-1 flex-shrink-0"></span><span>Redis caching for session state & performance optimization</span></li>
+            <li class="flex"><span class="icon-dot mt-1 flex-shrink-0"></span><span>Docker containerization for fault-tolerant deployment</span></li>
+          </ul>
+        </div>
+
+        <!-- Project 2 -->
+        <div class="card fade-up delay-2 p-6">
+          <div class="flex items-start justify-between mb-3">
+            <div class="text-2xl">🔧</div>
+            <span class="badge">Node.js</span>
+          </div>
+          <h3 class="text-lg font-bold mb-1" style="font-family:'Playfair Display',serif;">Vehicle Repair Tracker</h3>
+          <p class="text-xs mb-3" style="color:#888;">ACID-compliant Management System</p>
+          <div class="flex flex-wrap gap-2 mb-4">
+            <span class="badge">PostgreSQL</span>
+            <span class="badge">Sequelize ORM</span>
+          </div>
+          <hr class="divider mb-4"/>
+          <ul class="space-y-2 text-sm" style="color:#555;">
+            <li class="flex"><span class="icon-dot mt-1 flex-shrink-0"></span><span>ACID-compliant transactions for full data integrity</span></li>
+            <li class="flex"><span class="icon-dot mt-1 flex-shrink-0"></span><span>Conditional repair workflows & cost tracking features</span></li>
+            <li class="flex"><span class="icon-dot mt-1 flex-shrink-0"></span><span><strong style="color:#1a6b5a;">40% improvement</strong> in operational visibility</span></li>
+          </ul>
+        </div>
+
+        <!-- Project 3 -->
+        <div class="card fade-up delay-1 p-6">
+          <div class="flex items-start justify-between mb-3">
+            <div class="text-2xl">🔗</div>
+            <span class="badge">Node.js</span>
+          </div>
+          <h3 class="text-lg font-bold mb-1" style="font-family:'Playfair Display',serif;">Third-Party API Integrations</h3>
+          <p class="text-xs mb-3" style="color:#888;">Zoom & Google Calendar</p>
+          <div class="flex flex-wrap gap-2 mb-4">
+            <span class="badge">OAuth 2.0</span>
+            <span class="badge">Cron Jobs</span>
+            <span class="badge">Webhooks</span>
+          </div>
+          <hr class="divider mb-4"/>
+          <ul class="space-y-2 text-sm" style="color:#555;">
+            <li class="flex"><span class="icon-dot mt-1 flex-shrink-0"></span><span>Zoom OAuth for automated meeting scheduling & attendee mgmt</span></li>
+            <li class="flex"><span class="icon-dot mt-1 flex-shrink-0"></span><span>Google Calendar sync with background cron job processing</span></li>
+            <li class="flex"><span class="icon-dot mt-1 flex-shrink-0"></span><span>Rate limiting & retry logic for API resilience</span></li>
+          </ul>
+        </div>
+
+        <!-- Project 4 -->
+        <div class="card fade-up delay-2 p-6">
+          <div class="flex items-start justify-between mb-3">
+            <div class="text-2xl">🤖</div>
+            <span class="badge">Node.js + Python</span>
+          </div>
+          <h3 class="text-lg font-bold mb-1" style="font-family:'Playfair Display',serif;">LLM Document Analyzer</h3>
+          <p class="text-xs mb-3" style="color:#888;">AI-Powered Backend</p>
+          <div class="flex flex-wrap gap-2 mb-4">
+            <span class="badge">GPT-4</span>
+            <span class="badge">LangChain</span>
+            <span class="badge">LlamaIndex</span>
+          </div>
+          <hr class="divider mb-4"/>
+          <ul class="space-y-2 text-sm" style="color:#555;">
+            <li class="flex"><span class="icon-dot mt-1 flex-shrink-0"></span><span>Node.js API layer + Python ML backend microservices architecture</span></li>
+            <li class="flex"><span class="icon-dot mt-1 flex-shrink-0"></span><span>Document chunking, preprocessing & Q&A endpoints</span></li>
+            <li class="flex"><span class="icon-dot mt-1 flex-shrink-0"></span><span><strong style="color:#1a6b5a;">60% reduction</strong> in manual document review effort</span></li>
+          </ul>
+        </div>
+
+        <!-- Project 5 - full width -->
+        <div class="card fade-up delay-1 p-6 md:col-span-2">
+          <div class="flex items-start justify-between mb-3">
+            <div class="text-2xl">📋</div>
+            <span class="badge">Python / Django</span>
+          </div>
+          <h3 class="text-lg font-bold mb-1" style="font-family:'Playfair Display',serif;">SetInc — Multi-Device Task Management</h3>
+          <p class="text-xs mb-3" style="color:#888;">Production Platform · 500+ Concurrent Users</p>
+          <div class="flex flex-wrap gap-2 mb-4">
+            <span class="badge">Django REST Framework</span>
+            <span class="badge">MongoDB</span>
+            <span class="badge">Redis</span>
+            <span class="badge">JWT Auth</span>
+            <span class="badge">Firebase FCM</span>
+          </div>
+          <hr class="divider mb-4"/>
+          <div class="grid md:grid-cols-2 gap-3 text-sm" style="color:#555;">
+            <div class="flex"><span class="icon-dot flex-shrink-0"></span><span>JWT-based authentication with DRF ViewSets & Serializers</span></div>
+            <div class="flex"><span class="icon-dot flex-shrink-0"></span><span>Redis-backed session management for high performance</span></div>
+            <div class="flex"><span class="icon-dot flex-shrink-0"></span><span>Firebase Cloud Messaging for per-device push notifications</span></div>
+            <div class="flex"><span class="icon-dot flex-shrink-0"></span><span>Zero downtime deployment supporting 500+ concurrent users</span></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- SKILLS -->
+    <div>
+      <p class="section-label mb-4">Core Technical Skills</p>
+      <div class="grid md:grid-cols-3 gap-5">
+
+        <div class="card fade-up p-5">
+          <p class="font-bold mb-3 text-sm" style="color:#1a6b5a;">⚙️ Backend / Node.js</p>
+          <div class="flex flex-wrap gap-2">
+            <span class="badge">Express.js</span>
+            <span class="badge">Event-driven arch.</span>
+            <span class="badge">JWT</span>
+            <span class="badge">OAuth 2.0</span>
+            <span class="badge">Microservices</span>
+            <span class="badge">Docker</span>
+          </div>
+        </div>
+
+        <div class="card fade-up delay-1 p-5">
+          <p class="font-bold mb-3 text-sm" style="color:#1a6b5a;">🗄️ Databases</p>
+          <div class="flex flex-wrap gap-2">
+            <span class="badge">MongoDB</span>
+            <span class="badge">PostgreSQL</span>
+            <span class="badge">Sequelize ORM</span>
+            <span class="badge">Mongoose</span>
+            <span class="badge">Redis</span>
+            <span class="badge">Aggregations</span>
+          </div>
+        </div>
+
+        <div class="card fade-up delay-2 p-5">
+          <p class="font-bold mb-3 text-sm" style="color:#1a6b5a;">🔬 Python / AI / Cloud</p>
+          <div class="flex flex-wrap gap-2">
+            <span class="badge">Django / DRF</span>
+            <span class="badge">LangChain</span>
+            <span class="badge">LlamaIndex</span>
+            <span class="badge">GPT-4</span>
+            <span class="badge">AWS S3</span>
+            <span class="badge">GCP</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ACHIEVEMENTS -->
+    <div class="card fade-up p-6 md:p-8">
+      <p class="section-label mb-6">Key Achievements</p>
+      <div class="space-y-5">
+
+        <div>
+          <div class="flex justify-between text-sm mb-1">
+            <span class="font-medium">Manual document review time reduced</span>
+            <span class="font-bold" style="color:#1a6b5a;">60%</span>
+          </div>
+          <div class="h-2 rounded-full" style="background:#e8f5f2;">
+            <div class="achievement-bar" style="width:60%;"></div>
+          </div>
+          <p class="text-xs mt-1" style="color:#999;">LLM-Based Document Analyzer</p>
+        </div>
+
+        <div>
+          <div class="flex justify-between text-sm mb-1">
+            <span class="font-medium">Operational visibility improved</span>
+            <span class="font-bold" style="color:#1a6b5a;">40%</span>
+          </div>
+          <div class="h-2 rounded-full" style="background:#e8f5f2;">
+            <div class="achievement-bar" style="width:40%;"></div>
+          </div>
+          <p class="text-xs mt-1" style="color:#999;">Vehicle Repair Tracking System</p>
+        </div>
+
+        <div>
+          <div class="flex justify-between text-sm mb-1">
+            <span class="font-medium">API response time improvement</span>
+            <span class="font-bold" style="color:#1a6b5a;">35%</span>
+          </div>
+          <div class="h-2 rounded-full" style="background:#e8f5f2;">
+            <div class="achievement-bar" style="width:35%;"></div>
+          </div>
+          <p class="text-xs mt-1" style="color:#999;">Redis caching optimization</p>
+        </div>
+
+        <div>
+          <div class="flex justify-between text-sm mb-1">
+            <span class="font-medium">Concurrent users supported (zero downtime)</span>
+            <span class="font-bold" style="color:#1a6b5a;">500+</span>
+          </div>
+          <div class="h-2 rounded-full" style="background:#e8f5f2;">
+            <div class="achievement-bar" style="width:85%;"></div>
+          </div>
+          <p class="text-xs mt-1" style="color:#999;">SetInc Task Management Platform</p>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- FOOTER -->
+    <div class="text-center py-4 fade-up">
+      <p class="text-xs" style="color:#aaa;">Hiren Lalani · Backend Developer · Surat, Gujarat · 2025</p>
+      <div class="mt-2 flex justify-center gap-4 text-sm">
+        <a href="https://linkedin.com/in/hiren-lalani-8a6ba41b9" target="_blank" style="color:#1a6b5a;" class="hover:underline">LinkedIn</a>
+        <a href="https://github.com/hiren14" target="_blank" style="color:#1a6b5a;" class="hover:underline">GitHub</a>
+        <a href="mailto:hiren14lalani@gmail.com" style="color:#1a6b5a;" class="hover:underline">Email</a>
+      </div>
+    </div>
+
+  </main>
+</body>
+</html>
